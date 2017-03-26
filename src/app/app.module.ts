@@ -11,11 +11,11 @@ import { AngularFireModule } from 'angularfire2';
 
 // AF2 Settings
 export const firebaseConfig = {
-  apiKey: "AIzaSyBmRa5YJSABIr5hpgfu9bzEHRr2og2CRG4",
-  authDomain: "af2-lists-b3c86.firebaseapp.com",
-  databaseURL: "https://af2-lists-b3c86.firebaseio.com",
-  storageBucket: "af2-lists-b3c86.appspot.com",
-  messagingSenderId: "401884397030"
+    apiKey: "AIzaSyAYZWx4JkwEjIj_0tPSO-Q9KiprzGRjxSY",
+    authDomain: "first-project-ce653.firebaseapp.com",
+    databaseURL: "https://first-project-ce653.firebaseio.com",
+    storageBucket: "first-project-ce653.appspot.com",
+    messagingSenderId: "823900032608"
 };
 
 @NgModule({

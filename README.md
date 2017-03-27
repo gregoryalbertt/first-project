@@ -2,7 +2,7 @@
 
 First attempt to make a transportation app
 
-############### IMPORTANT ################
+############### IMPORTANT ################ /n
 Remeber to change firebase auth rules to:
 {
   "rules": {

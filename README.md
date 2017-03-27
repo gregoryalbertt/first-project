@@ -1,2 +1,12 @@
 # af2-lists
-Firebase init for ionic2 projects
+
+First attempt to make a transportation app
+
+############### IMPORTANT ################
+Remeber to change firebase auth rules to:
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}

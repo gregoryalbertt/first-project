@@ -1,13 +1,24 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
+//Pages
 import { HomePage } from '../pages/home/home';
+import { ForgotPasswordPage } from './../pages/auth/forgot-password/forgot-password';
+import { SignUpPage } from './../pages/auth/sign-up/sign-up';
+import { LoginPage } from './../pages/auth/login/login';
+import { HomeAuthPage } from './../pages/auth/home-auth/home-auth';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
+
+//Providers
+import { AuthProvider } from './../providers/auth';
+import { DataProvider } from './../providers/data';
+
 
 // AF2 Settings
 export const firebaseConfig = {
@@ -21,7 +32,11 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    HomeAuthPage,
+    LoginPage,
+    SignUpPage,
+    ForgotPasswordPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -30,12 +45,19 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    HomeAuthPage,
+    LoginPage,
+    SignUpPage,
+    ForgotPasswordPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider,
+    AuthProvider
   ]
 })
 export class AppModule {}
+

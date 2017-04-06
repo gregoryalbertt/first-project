@@ -1,13 +1,8 @@
-# af2-lists
+# First-project
 
-First attempt to make a transportation app
-
-############### IMPORTANT ################
-
-Remeber to change firebase auth rules to:
-{
-  "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
-  }
-}
+First attempt to make a transportation hybrid app
+Tech used:
+- Angular2
+- Ionic2 (Cordova)
+- NodeJs
+- Firebase

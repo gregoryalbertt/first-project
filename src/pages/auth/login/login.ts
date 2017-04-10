@@ -1,3 +1,4 @@
+import { HomePage } from './../../home/home';
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 
@@ -39,6 +40,7 @@ export class LoginPage {
       setTimeout(() => {
         loading.dismiss();
         // The auth subscribe method inside the app.ts will handle the page switch to home
+        this.navCtrl.setRoot(HomePage);
       }, 1000);
     }, err => {
       setTimeout(() => {

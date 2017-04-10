@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { HomePage } from '../pages/home/home';
 import { HomeAuthPage } from './../pages/auth/home-auth/home-auth';
 
 import { AuthProvider } from './../providers/auth';
@@ -28,7 +27,19 @@ export class MyApp {
     };
   }
 
-  ngOnInit() {
+    ngOnInit() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+    });
+
+  }
+  
+}
+
+
+
+/*
+    ngOnInit() {
     this.platform.ready().then(() => {
       this.auth.getUserData().subscribe(data => {
         if (!this.isAppInitialized) {
@@ -45,4 +56,5 @@ export class MyApp {
       this.statusBar.styleDefault();
     });
   }
-}
+
+  */

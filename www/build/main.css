@@ -24621,3 +24621,37 @@ page-login .login-email .error p {
   color: white;
   font-weight: bold;
 }
+
+page-sign-up .sign-up {
+  background-image: url("../../assets/img/auth-background.jpg");
+  background-size: 100%;
+  background-position-y: 50%;
+}
+
+page-sign-up .sign-up .log-in-txt {
+  width: 100%;
+  text-align: right;
+  color: white;
+}
+
+page-sign-up .sign-up form {
+  width: 95%;
+  margin: auto;
+}
+
+page-sign-up .sign-up form .sign-up-btn {
+  background-color: #4aa5d9;
+  margin: auto;
+}
+
+page-sign-up .sign-up .error {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #d94a57;
+}
+
+page-sign-up .sign-up .error p {
+  color: white;
+  font-weight: bold;
+}

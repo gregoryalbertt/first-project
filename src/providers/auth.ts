@@ -10,13 +10,7 @@ import {DataProvider} from './data';
 @Injectable()
 export class AuthProvider {
   user: any;
-  constructor(private af: AngularFire, private data: DataProvider, private platform: Platform) {
-    this.af.database.list('pushTest').push({
-      teste: 'teste'
-    }).then((data) => {
-      console.log(data);
-    });
-  }
+  constructor(private af: AngularFire, private data: DataProvider, private platform: Platform) {  }
 
   getUserData() {
     return Observable.create(observer => {
@@ -77,6 +71,7 @@ export class AuthProvider {
         observer.error(error);
       });
     });
+    
   }
 
   loginWithFacebook() {
@@ -96,7 +91,11 @@ export class AuthProvider {
     });
   }
 
-  logout() {
-    this.af.auth.logout();
+logout(): firebase.Promise<any> {
+  try{
+    return firebase.auth().signOut();
+  }catch(erro){
+    console.log(erro);
   }
+}
 }

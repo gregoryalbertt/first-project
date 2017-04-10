@@ -1,3 +1,5 @@
+import { HomeAuthPage } from './../auth/home-auth/home-auth';
+import { AuthProvider } from './../../providers/auth';
 import { Component } from '@angular/core';
 
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
@@ -10,12 +12,15 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, af: AngularFire, public alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController) {
+  constructor(public navCtrl: NavController, af: AngularFire, public alertCtrl: AlertController, 
+  public actionSheetCtrl: ActionSheetController, public auth: AuthProvider) {
     this.itens = af.database.list('/itens');
     
   }
 
   itens: FirebaseListObservable<any>;
+
+  data: any;
 
   addItem(){
     let prompt = this.alertCtrl.create({
@@ -109,6 +114,13 @@ showOptions(itemId, itemTitle) {
     ]
   });
   actionSheet.present();
+}
+
+logOut(){
+
+  this.auth.logout();
+  this.navCtrl.setRoot(HomeAuthPage);
+
 }
 
 }

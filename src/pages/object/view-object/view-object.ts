@@ -13,10 +13,18 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ViewObjectPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.item = this.navParams.get('item');
+    this.itemId = this.navParams.get('itemId');
+  }
+
+  item: any;
+  itemId: any;
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewObjectPage');
+    console.log(this.item);
   }
+
+  
 
 }

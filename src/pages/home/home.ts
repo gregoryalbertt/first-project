@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
-import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
-
+import { NavController, AlertController, ActionSheetController, NavParams } from 'ionic-angular';
 
 // Firebase
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
@@ -12,6 +10,7 @@ import { AuthProvider } from './../../providers/auth';
 
 //Pages
 import { CreateObjectPage } from './../object/create-object/create-object';
+import { ViewObjectPage } from './../object/view-object/view-object';
 
 
 @Component({
@@ -21,7 +20,7 @@ import { CreateObjectPage } from './../object/create-object/create-object';
 export class HomePage {
 
   constructor(public navCtrl: NavController, af: AngularFire, public alertCtrl: AlertController, 
-  public actionSheetCtrl: ActionSheetController, public auth: AuthProvider) {
+  public actionSheetCtrl: ActionSheetController, public auth: AuthProvider, public navPrms: NavParams) {
     this.items = af.database.list('/itens');
     
   }
@@ -130,6 +129,16 @@ showOptions(itemId, itemTitle) {
     ]
   });
   actionSheet.present();
+}
+
+showItem(itemId, item){
+
+   let data = {
+     item,
+     itemId
+   }
+
+   this.navCtrl.push(ViewObjectPage, data);
 }
 
 logOut(){

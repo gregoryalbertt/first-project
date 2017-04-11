@@ -14,7 +14,7 @@
 <ion-content padding>
   
   <ion-list>
-  <ion-item *ngFor="let item of items | async" (click)="showOptions(item.$key, item.title)">
+  <ion-item *ngFor="let item of items | async" (click)="showItem(item.$key, item)">
     {{item.title}}
   </ion-item>
 </ion-list>

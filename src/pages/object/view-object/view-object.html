@@ -13,4 +13,20 @@
     {{ item.description }}
   </div>
 
+  <div *ngIf="isAuthor">
+
+    <button ion-button icon-only (click)="editObject()">
+  <ion-icon name="create"></ion-icon>
+</button> 
+
+  </div>
+
+  <div *ngIf="!isAuthor">
+
+    <button ion-button icon-only (click)="matchObject()">
+  <ion-icon name="send"></ion-icon>
+</button> 
+    
+  </div>
+
 </ion-content>

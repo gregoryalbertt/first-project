@@ -1,10 +1,18 @@
-import { HomeAuthPage } from './../auth/home-auth/home-auth';
-import { AuthProvider } from './../../providers/auth';
 import { Component } from '@angular/core';
 
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 
+
+// Firebase
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
+
+//Providers
+import { HomeAuthPage } from './../auth/home-auth/home-auth';
+import { AuthProvider } from './../../providers/auth';
+
+//Pages
+import { CreateObjectPage } from './../object/create-object/create-object';
+
 
 @Component({
   selector: 'page-home',
@@ -14,22 +22,25 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, af: AngularFire, public alertCtrl: AlertController, 
   public actionSheetCtrl: ActionSheetController, public auth: AuthProvider) {
-    this.itens = af.database.list('/itens');
+    this.items = af.database.list('/itens');
     
   }
 
-  itens: FirebaseListObservable<any>;
+  items: FirebaseListObservable<any>;
 
   data: any;
-
+/*
   addItem(){
     let prompt = this.alertCtrl.create({
       title: 'Item name',
-      message: 'Enter Item description',
+      message: 'Enter Item name',
       inputs: [
         {
           name: 'title',
           placeholder: 'Title'
+      },
+      {
+
       },
       ],
       buttons: [
@@ -51,10 +62,15 @@ export class HomePage {
   });
   prompt.present();
 }
+*/
+
+addItem(){
+  this.navCtrl.push(CreateObjectPage);
+}
 
 
 removeItem(itemID: string){
-  this.itens.remove(itemID);
+  this.items.remove(itemID);
 
 }
 
@@ -79,7 +95,7 @@ updateItem(itemID, itemTitle){
       {
         text: 'Save',
         handler: data => {
-          this.itens.update(itemID, {
+          this.items.update(itemID, {
             title: data.title
           });
         }

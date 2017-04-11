@@ -1,13 +1,15 @@
+import { CreateObjectPage } from './../pages/object/create-object/create-object';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 //Pages
-import { HomePage } from '../pages/home/home';
+import { HomePage } from './../pages/home/home';
 import { ForgotPasswordPage } from './../pages/auth/forgot-password/forgot-password';
 import { SignUpPage } from './../pages/auth/sign-up/sign-up';
 import { LoginPage } from './../pages/auth/login/login';
 import { HomeAuthPage } from './../pages/auth/home-auth/home-auth';
+import { ViewObjectPage } from './../pages/object/view-object/view-object';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -36,7 +38,9 @@ export const firebaseConfig = {
     HomeAuthPage,
     LoginPage,
     SignUpPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    ViewObjectPage,
+    CreateObjectPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -49,7 +53,9 @@ export const firebaseConfig = {
     HomeAuthPage,
     LoginPage,
     SignUpPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    CreateObjectPage,
+    ViewObjectPage
   ],
   providers: [
     StatusBar,

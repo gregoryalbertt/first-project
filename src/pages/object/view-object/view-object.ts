@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 //Firebase
-//import { FirebaseListObservable, AngularFire } from 'angularfire2';
+import { FirebaseListObservable, AngularFire } from 'angularfire2';
 import * as firebase from 'firebase'
 
 //Pages
 import { EditObjectPage } from './../edit-object/edit-object';
+//import { HomePage } from './../../home/home';
 
 
 @Component({
@@ -15,7 +16,9 @@ import { EditObjectPage } from './../edit-object/edit-object';
 })
 export class ViewObjectPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  af: AngularFire) {
+    this.items = af.database.list('/items');
     this.item = this.navParams.get('item');
     this.itemId = this.navParams.get('itemId');
     this.ownerId = this.item.ownerId;
@@ -24,16 +27,15 @@ export class ViewObjectPage {
 
   }
 
+  items: FirebaseListObservable<any>;
   item: any;
-  itemId: any;
+  itemId: string;
   userId: any;
   ownerId: any;
   isAuthor: boolean = false;
 
   ionViewDidLoad() {
-    console.log(this.ownerId);
-    console.log(this.userId);
-    console.log(this.isAuthor);
+    console.log(this.itemId);
   }
 
   editObject(){
@@ -48,6 +50,13 @@ export class ViewObjectPage {
   matchObject(){
 
   }
+
+  deleteItem( ){
+  this.items.remove(this.itemId);
+  this.navCtrl.pop();
+
+
+}
 
   
 

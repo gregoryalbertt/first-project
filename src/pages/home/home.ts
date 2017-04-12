@@ -21,7 +21,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, af: AngularFire, public alertCtrl: AlertController, 
   public actionSheetCtrl: ActionSheetController, public auth: AuthProvider, public navPrms: NavParams) {
-    this.items = af.database.list('/itens');
+    this.items = af.database.list('/items');
     
   }
 

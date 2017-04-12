@@ -17,7 +17,7 @@ import * as firebase from 'firebase'
 export class CreateObjectPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire) {
-    this.items = af.database.list('/itens');
+    this.items = af.database.list('/items');
     this.data = {
       title: '',
       description: '',

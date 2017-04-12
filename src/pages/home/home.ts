@@ -145,6 +145,7 @@ logOut(){
 
   this.auth.logout();
   this.navCtrl.setRoot(HomeAuthPage);
+  //this.navCtrl.popAll();
 
 }
 

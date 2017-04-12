@@ -6,7 +6,7 @@ import { FirebaseListObservable, AngularFire } from 'angularfire2';
 import * as firebase from 'firebase'
 
 //Pages
-import { HomePage } from './../../home/home';
+//import { HomePage } from './../../home/home';
 
 
 @Component({
@@ -35,7 +35,7 @@ export class CreateObjectPage {
     console.log(this.data);
 
     this.items.push(this.data);
-    this.navCtrl.push(HomePage);
+    this.navCtrl.pop();
   }
 
 

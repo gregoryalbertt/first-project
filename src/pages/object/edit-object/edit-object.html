@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>edit-object</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="editForm()">
+  <ion-list>
+
+  <ion-item>
+    <ion-input type="text" [(ngModel)] = "data.title" name="title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text"  [(ngModel)] = "data.description" name="description"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+  <button ion-button type="submit" block> Edit </button>
+    </form>
+
+</ion-content>

@@ -5,6 +5,10 @@ import { NavController, NavParams } from 'ionic-angular';
 //import { FirebaseListObservable, AngularFire } from 'angularfire2';
 import * as firebase from 'firebase'
 
+//Pages
+import { EditObjectPage } from './../edit-object/edit-object';
+
+
 @Component({
   selector: 'page-view-object',
   templateUrl: 'view-object.html'
@@ -34,10 +38,15 @@ export class ViewObjectPage {
 
   editObject(){
 
+    this.navCtrl.push(EditObjectPage, {
+      item: this.item,
+      itemId: this.itemId
+    });
+
   }
 
   matchObject(){
-    
+
   }
 
   

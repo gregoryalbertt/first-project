@@ -10,6 +10,7 @@ import { SignUpPage } from './../pages/auth/sign-up/sign-up';
 import { LoginPage } from './../pages/auth/login/login';
 import { HomeAuthPage } from './../pages/auth/home-auth/home-auth';
 import { ViewObjectPage } from './../pages/object/view-object/view-object';
+import { EditObjectPage } from './../pages/object/edit-object/edit-object';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -40,7 +41,8 @@ export const firebaseConfig = {
     SignUpPage,
     ForgotPasswordPage,
     ViewObjectPage,
-    CreateObjectPage
+    CreateObjectPage,
+    EditObjectPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -55,7 +57,8 @@ export const firebaseConfig = {
     SignUpPage,
     ForgotPasswordPage,
     CreateObjectPage,
-    ViewObjectPage
+    ViewObjectPage,
+    EditObjectPage
   ],
   providers: [
     StatusBar,
